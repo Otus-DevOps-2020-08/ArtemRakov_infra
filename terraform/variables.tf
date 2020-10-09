@@ -30,3 +30,9 @@ variable service_account_key_file {
 variable private_key_path {
   description = "Path to the private key used for ssh access"
 }
+
+variable number_of_instances {
+  type = number
+  default = 1
+  description = "Number of instances existing in project"
+}
