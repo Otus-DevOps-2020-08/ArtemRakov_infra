@@ -32,7 +32,15 @@ variable private_key_path {
 }
 
 variable number_of_instances {
-  type = number
-  default = 1
+  type        = number
+  default     = 1
   description = "Number of instances existing in project"
+}
+
+variable app_disk_image {
+  description = "Disk image of the app"
+}
+
+variable db_disk_image {
+  description = "Db image of the app"
 }
