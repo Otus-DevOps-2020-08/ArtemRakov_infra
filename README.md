@@ -51,3 +51,7 @@ yc compute instance create \
   --metadata serial-port-enable=1 \
   --metadata-from-file user-data=./metadata.yaml
 ```
+
+### Ansible 1
+
+Когда мы в первый раз прогнали `git clone` ansible скопировал репу. И разы, когда прогоняли плейбук с клонированием ничего не происходило. Потому что, ansible идемпотентный. А когда мы удалили папку `~/reddit` и прогнали еще раз плейбук, то ansible склонировал репу опять. 
