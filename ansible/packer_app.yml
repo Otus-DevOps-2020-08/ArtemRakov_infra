@@ -1,0 +1,20 @@
+---
+- name: Setting up image for packer-app
+  become: true
+  hosts: all
+
+  tasks:
+    - name: Install essentials
+      apt:
+        name: build-essential
+        state: present
+        update_cache: yes
+
+    - name: Install ruby essentials
+      apt:
+        pkg:
+          - ruby-full
+          - ruby-bundler
+        state: present
+        update_cache: yes
+

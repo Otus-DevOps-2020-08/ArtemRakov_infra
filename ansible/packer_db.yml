@@ -1,0 +1,27 @@
+---
+- name: Setting up image for packer-db
+  become: true
+  hosts: all
+
+  tasks:
+    - name: Add apt key
+      apt_key:
+        url: https://www.mongodb.org/static/pgp/server-4.2.asc
+        state: present
+
+    - name: Add apt repository
+      apt_repository:
+        repo: deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse
+        state: present
+
+    - name: Install mongodb
+      apt:
+        name: mongodb-org
+        force: yes
+
+    - name: Enable mongodb
+      systemd:
+        name: mongod
+        enabled: yes
+
+
