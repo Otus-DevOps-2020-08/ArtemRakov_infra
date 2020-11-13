@@ -2,8 +2,5 @@
   hosts: app
   become: true
 
-  vars:
-    db_host: 130.193.37.107
-
   roles:
     - app
